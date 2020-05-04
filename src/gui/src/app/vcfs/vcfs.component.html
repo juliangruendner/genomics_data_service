@@ -1,0 +1,56 @@
+<div class="row ml-5 mb-3">
+  <div class="col-3">
+    <input #vcfFile type="file" (change)="onChange($event)" name="file" ngModel class="form-control-file" id="vcf_file"
+      multiple>
+  </div>
+  <div class="col">
+    <button [disabled]="vcfFiles.length == 0" *ngIf="!uploadInProgress" (click)="onUpload()" class="btn btn-primary"
+      type="button">Upload</button>
+    <div *ngIf="uploadInProgress" class="spinner-border text-primary" role="status">
+      <span class="sr-only">Uploading...</span>
+    </div>
+  </div>
+</div>
+<div *ngIf="error" class="row alert alert-danger" role="alert">
+  {{ error }}
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"><input [(ngModel)]="allChecked" type="checkbox" (click)="onAllChecked()"/></th>
+      <th scope="col">Name</th>
+      <th scope="col">Download</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vcf of vcfs; let i = index">
+      <td><input [(ngModel)]="vcf.checked" type="checkbox" /></td>
+      <td>{{ vcf.name }}</td>
+      <td><a href="{{apiUrl}}/gemini/vcfs/{{vcf.name}}" class="fa-clickable" download><i class="fa fa-download"
+            aria-hidden="true" style="color:blue"></i></a></td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="vcfs.length > 0" class="row ml-3">
+  <div class="col-5">
+    <form #f="ngForm">
+      <select ngModel name="tool" id="tool">
+        <option value="" disabled selected>Merge Tool</option>
+        <option *ngFor="let tool of tools" [value]="tool">{{ tool }}</option>
+      </select>
+      <select *ngIf="f.value.tool == 'bcf'" ngModel name="filter" id="filter">
+          <option value="" disabled selected>Filter Option</option>
+          <option *ngFor="let filter of filters" [value]="filter">{{ filter }}</option>
+        </select>
+      <input type="text" name="output_file_name" class="ml-3" ngModel size="40"
+        placeholder="Name of the merged file (no spaces allowed)">
+    </form>
+  </div>
+  <div class="col">
+    <button *ngIf="!mergeInProgress" [disabled]="getCountChecked() < 2 || !f.value.tool || !f.value.output_file_name || (f.value.tool == 'bcf' && !f.value.filter)"
+      (click)="merge()" class="btn btn-primary ml-3" type="button">Merge</button>
+    <div *ngIf="mergeInProgress" class="spinner-border text-primary" role="status">
+      <span class="sr-only">Merging...</span>
+    </div>
+  </div>
+</div>

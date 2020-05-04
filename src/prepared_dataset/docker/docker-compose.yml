@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  prepared_dataset:
+    container_name: prepared_dataset
+    restart: unless-stopped
+    environment:
+      FHIR_URL:
+      FHIR_PREPROC_USER: gemini
+      FHIR_PREPROC_PW: 
+      GEMINI_URL:
+      GEMINI_USER: gemini
+      GEMINI_PW:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ..:/usr/src/app
+    ports:
+      - "5005:5000"
+    networks:
+      - ma
+
+networks:
+  ma:
+    external: true

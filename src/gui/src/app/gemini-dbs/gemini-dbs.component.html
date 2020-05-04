@@ -1,0 +1,32 @@
+<div class="mb-2 ml-2">
+  <p class="lead">
+    <!-- You can download an existing GEMINI database by clicking the Download Icon.
+    <br> -->
+    To explore the GEMINI SQLite database I would recommend using a database tool like
+    <a href="https://tableplus.io/" target="_blank">TablePlus</a>.
+    <br>
+    Alternatively, you can browse a certain database by clicking the View Online Icon.
+  </p>
+</div>
+
+<div class="alert alert-warning" role="alert">
+  <b>Notice</b>: The colums starting with "gt" in the "variants"-table are not displayed correctly since they are binary compressed arrays and must be decompressed before! Write/Use a <a routerLink="/query">GEMINI Query</a> to see the full information.
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Database Name</th>
+      <th scope="col">Download</th>
+      <th scope="col">View Online</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let db of dbs; let i = index">
+      <td>{{ db }}</td>
+      <td><a href="{{apiUrl}}/gemini/dbs/{{db}}" class="fa-clickable"><i class="fa fa-download" aria-hidden="true"
+            style="color:blue"></i></a></td>
+      <td><a href="http://inloop.github.io/sqlite-viewer/?url={{apiUrl}}/gemini/dbs/{{db}}" target="_blank" class="fa-clickable"><i
+            class="fa fa-eye" aria-hidden="true"></i></a></td>
+    </tr>
+  </tbody>
+</table>

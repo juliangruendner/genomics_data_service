@@ -1,0 +1,4 @@
+VCFS_PATH: /usr/local/share/vcfs
+DBS_PATH: /usr/local/share/gemini_sqlite_dbs
+HG19_REF_FILE: /usr/local/share/ref_file/hg19_upper.fa
+SNPEFFJAR: /usr/src/snpeff/snpEff/snpEff.jar

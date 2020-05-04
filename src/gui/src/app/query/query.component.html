@@ -1,0 +1,77 @@
+  <div class="card mb-2">
+      <div class="card-body">
+          <form #f="ngForm">
+              <div class="row mb-3">
+                  <div class="col">
+              <select ngModel name="db" id="db">
+                  <option value="" disabled selected>GEMINI DB</option>
+                  <option *ngFor="let db of dbs" [value]="db">{{ db }}</option>
+                </select>
+              </div>
+            </div>
+              <div class="row mb-3">
+                <div class="col">
+                    <textarea rows="3" type="text" name="query" ngModel class="form-control" placeholder="Query">
+                    </textarea>
+                </div>
+            </div>
+              <div class="row">
+                  <div class="col-3">
+                      <button [disabled]="!f.value.db || !f.value.query" (click)="init_stuff();query()" class="btn btn-primary" type="button">Query</button>
+                  </div>
+                  <div class="col-3">
+                      <button [disabled]="!f.value.db" (click)="open(content)" class="btn btn-primary" type="button">Sample Queries</button>
+                  </div>
+                  <div class="col-6">
+                      <button [disabled]="index == 0" (click)="prev_chunk()" class="btn btn-primary mr-4" type="button"><<</button>
+                      <b *ngIf="max_index > 0">
+                        {{ index+1 }} / {{ max_index }}
+                      </b>
+                      <button [disabled]="index+1 >= max_index" (click)="next_chunk()" class="btn btn-primary ml-4" type="button">>></button>
+                  </div>
+              </div>
+              <div class="row mt-3">
+                <div *ngIf="error" class="alert alert-danger" role="alert">
+                    Error processing query: {{ error }}
+                </div>
+              </div>
+          </form>
+      </div>
+  </div>
+
+<div class="table-wrapper">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th *ngFor="let key of keys" scope="col">{{ key }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of data">
+        <td *ngFor="let key of keys">{{ d[key] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Example Queries</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+        <table class='table table-bordered table-condensed table-striped table-hover'>
+        <tr>
+          <th>Description</th>
+          <!-- <th>Query</th> -->
+        </tr>
+         <tr *ngFor="let q of exampleQueries;" (click)="init_stuff();selectSampleQuery(q);modal.close()" class="table-row table-row-modal">
+          <td>{{ q.desc }}</td>
+          <!-- <td>{{ q.query }}</td> -->
+        </tr>
+         </table>
+         <div class="alert alert-info" role="alert">
+            Further information in the <a href="https://gemini.readthedocs.io/en/latest/content/querying.html" target="_blank">related GEMINI Docs</a>.
+    </div>
+</ng-template>

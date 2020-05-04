@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  gemini:
+    container_name: gemini
+    restart: unless-stopped
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+      args:
+        nodata: --nodata
+    volumes:
+      - ..:/usr/src/app
+    ports:
+      - "5000:5000"
+    networks:
+      - ma
+
+networks:
+  ma:
+    external: true

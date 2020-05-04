@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  nginx_queue:
+    container_name: gemini_gui_server
+    restart: unless-stopped
+    image: gemini_gui_server:latest
+    ports:
+      - "443:443"
+    environment:
+      - ALLOWED_IPS=${ALLOWED_IPS}
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    command: bash -c "cd /etc/nginx/conf.d/ && ./nginx_start.sh"
+    networks: 
+      - ma
+
+networks:
+  ma:
+    external: true
+

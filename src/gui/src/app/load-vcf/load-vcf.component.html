@@ -1,0 +1,47 @@
+<div class="jumbotron">
+    <h3 class="display-6">GEMINI Workflow</h3>
+    <p class="lead"><a href="https://gemini.readthedocs.io/en/latest/#new-gemini-workflow"
+        target="_blank">Here's</a> a short description of what happens with the "raw" VCF File when it's imported into GEMINI.
+    </p>
+    <hr class="my-4">
+    <div class="card load-vcf-card" style="width: 50rem;">
+        <div class="card-body">
+            <h5 class="card-title mb-3">Import VCF File into GEMINI</h5>
+            <form #f="ngForm">
+                <div class="row ml-1 mb-3">
+                    <select ngModel name="vcf" id="vcf">
+                        <option value="" disabled selected>VCF File</option>
+                        <option *ngFor="let vcf of vcfs" [value]="vcf">{{ vcf }}</option>
+                    </select>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" name="db_name" ngModel class="form-control"
+                            placeholder="Name of the new GEMINI Database (no spaces allowed)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button [disabled]="!f.value.vcf || !f.value.db_name" *ngIf="!inProgress"
+                            (click)="onLoadIntoGemini()" class="btn btn-primary" type="button">Import</button>
+                    </div>
+                    <div class="col">
+                        <div *ngIf="inProgress" class="spinner-border text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="col mt-3">
+                        <div *ngIf="success" class="alert alert-success" role="alert">
+                            GEMINI Database created successfully!
+                        </div>
+                        <div *ngIf="error" class="alert alert-danger" role="alert">
+                            GEMINI Database could not be created!
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

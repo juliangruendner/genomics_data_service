@@ -1,0 +1,30 @@
+@import 'scss/variables';
+@import '~bootstrap/scss/bootstrap';
+@import '../node_modules/font-awesome/scss/font-awesome';
+
+body {
+    background-color: #f9fcff;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.fa-clickable {
+    cursor: pointer;
+    outline: none;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+td {
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+.queryExamplesModal .modal-dialog {
+    max-width: 90%;
+}

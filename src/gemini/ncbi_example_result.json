@@ -1,0 +1,225 @@
+{
+	"Result": {
+		"Term": "act",
+		"eGQueryResult": {
+			"ResultItem": [
+				{
+					"DbName": "pubmed",
+					"MenuName": "PubMed",
+					"Count": "280334",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "pmc",
+					"MenuName": "PubMed Central",
+					"Count": "1028751",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "mesh",
+					"MenuName": "MeSH",
+					"Count": "506",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "books",
+					"MenuName": "Books",
+					"Count": "32369",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "pubmedhealth",
+					"MenuName": "PubMed Health",
+					"Count": "2989",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "omim",
+					"MenuName": "OMIM",
+					"Count": "1241",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "ncbisearch",
+					"MenuName": "Site Search",
+					"Count": "200",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "nuccore",
+					"MenuName": "Nucleotide",
+					"Count": "5123846",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "nucgss",
+					"MenuName": "GSS",
+					"Count": "657",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "nucest",
+					"MenuName": "EST",
+					"Count": "1692",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "protein",
+					"MenuName": "Protein",
+					"Count": "2226610",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "genome",
+					"MenuName": "Genome",
+					"Count": "26",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "structure",
+					"MenuName": "Structure",
+					"Count": "13002",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "taxonomy",
+					"MenuName": "Taxonomy",
+					"Count": "0",
+					"Status": "Term or Database is not found"
+				},
+				{
+					"DbName": "snp",
+					"MenuName": "SNP",
+					"Count": "77786",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "dbvar",
+					"MenuName": "dbVar",
+					"Count": "2231",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "gene",
+					"MenuName": "Gene",
+					"Count": "108964",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "sra",
+					"MenuName": "SRA",
+					"Count": "10118",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "biosystems",
+					"MenuName": "BioSystems",
+					"Count": "4317",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "unigene",
+					"MenuName": "UniGene",
+					"Count": "180",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "cdd",
+					"MenuName": "Conserved Domains",
+					"Count": "1565",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "clone",
+					"MenuName": "Clone",
+					"Count": "0",
+					"Status": "Term or Database is not found"
+				},
+				{
+					"DbName": "popset",
+					"MenuName": "PopSet",
+					"Count": "1539",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "geoprofiles",
+					"MenuName": "GEO Profiles",
+					"Count": "208726",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "gds",
+					"MenuName": "GEO DataSets",
+					"Count": "10008",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "homologene",
+					"MenuName": "HomoloGene",
+					"Count": "720",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "pccompound",
+					"MenuName": "PubChem Compound",
+					"Count": "73",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "pcsubstance",
+					"MenuName": "PubChem Substance",
+					"Count": "5513",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "pcassay",
+					"MenuName": "PubChem BioAssay",
+					"Count": "18014",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "nlmcatalog",
+					"MenuName": "NLM Catalog",
+					"Count": "11194",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "probe",
+					"MenuName": "Probe",
+					"Count": "531",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "gap",
+					"MenuName": "dbGaP",
+					"Count": "3089",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "proteinclusters",
+					"MenuName": "Protein Clusters",
+					"Count": "169",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "bioproject",
+					"MenuName": "BioProject",
+					"Count": "1628",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "biosample",
+					"MenuName": "BioSample",
+					"Count": "4167",
+					"Status": "Ok"
+				},
+				{
+					"DbName": "biocollections",
+					"MenuName": "BioCollections",
+					"Count": "0",
+					"Status": "Term or Database is not found"
+				}
+			]
+		}
+	}
+}
